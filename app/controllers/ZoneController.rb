@@ -1,6 +1,6 @@
 class ZoneController < PM::Screen
 
-  # title "Equanimity"
+  title "Equanimity"
 
   # def on_load
   #     set_nav_bar_button :left, title: "D3 View", action: :open_help_screen
@@ -118,12 +118,12 @@ end
 
   def panic_tapped
 
-    data = {answer: 1, email: App::Persistence['email']}
+    data = {answer: 1, email: App::Persistence['email'], cohort: App::Persistence['cohort']}
 
     BubbleWrap::HTTP.post("http://equanimity.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
 
       puts data
-      puts "response = #{response}"
+      # puts "response = #{response}"
       # puts "response.body = #{response.body.to_str rescue ''}"
       # puts "response.error_message = #{response.error_message}"
       # puts "response.status_code = #{response.status_code.to_s rescue ''}"
@@ -140,7 +140,7 @@ end
 
 
     def panic_edge_tapped
-    data = {answer: 2, email: App::Persistence['email']}
+    data = {answer: 2, email: App::Persistence['email'], cohort: App::Persistence['cohort']}
     BubbleWrap::HTTP.post("http://equanimity.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
       if response.ok?
         App.alert("Thanks!")
@@ -151,7 +151,7 @@ end
   end
 
     def learning_tapped
-    data = {answer: 3, email: App::Persistence['email']}
+    data = {answer: 3, email: App::Persistence['email'], cohort: App::Persistence['cohort']}
     BubbleWrap::HTTP.post("http://equanimity.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
       if response.ok?
         App.alert("Thanks!")
@@ -164,7 +164,7 @@ end
 
 
     def comfort_edge_tapped
-    data = {answer: 4, email: App::Persistence['email']}
+    data = {answer: 4, email: App::Persistence['email'], cohort: App::Persistence['cohort']}
     BubbleWrap::HTTP.post("http://equanimity.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
       if response.ok?
         App.alert("Thanks!")
@@ -177,7 +177,7 @@ end
 
 
     def comfort_tapped
-    data = {answer: 5, email: App::Persistence['email']}
+    data = {answer: 5, email: App::Persistence['email'], cohort: App::Persistence['cohort']}
     BubbleWrap::HTTP.post("http://equanimity.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
       if response.ok?
         App.alert("Thanks!")

@@ -16,7 +16,16 @@ class RegisterController < PM::FormotionScreen #Formotion::FormController #PM:Fo
           type: :email,
           auto_correction: :no,
           auto_capitalization: :none
-        }],
+        },
+        {
+          title: "Cohort",
+          key: :cohort,
+          type: :picker,
+          items: ["Otters", "Grasshoppers", "Dragonflies", "Staff"],
+          # value: "Cohort",
+          placeholder: "Cohort",
+          input_accessory: :done
+          }],
       }, {
         title: "Calm down, everything is fine.",
         rows: [{
@@ -71,8 +80,10 @@ class RegisterController < PM::FormotionScreen #Formotion::FormController #PM:Fo
       # else
         SVProgressHUD.showWithStatus("Registering new account...", maskType:SVProgressHUDMaskTypeGradient)
         App::Persistence['email'] = form.render[:email]
+        App::Persistence['cohort'] = form.render[:cohort]
         # App.alert("You did it!")
         puts App::Persistence['email']
+        puts App::Persistence['cohort']
         # self.navigationController.dismissModalViewControllerAnimated(true)
         open ZoneController.new(nav_bar: true)
         # alert('hi')
