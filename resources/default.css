@@ -1,0 +1,45 @@
+
+
+/*    button {
+        color            : #446620;
+        background-color : linear-gradient(#87c44a, #b4da77);
+        border-width     : 1px;
+        border-color     : #84a254;
+        border-radius    : 10px;
+        font-size        : 15px;
+        font-weight      : bold;
+/*        height: 200px;
+        width: 300px;*/
+    /*}*/
+
+#myView {
+  background-color: linear-gradient(#000000, #f2f4f6);
+}
+
+#panic, #panic_edge, #learning, #comfort_edge, #comfort {
+  height: 60px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#panic {
+  background-color: #D40412;
+}
+
+#panic_edge {
+  background-color: #E8800C;
+}
+
+#learning {
+  background-color: #2E9E4A;
+}
+
+#comfort_edge {
+  background-color: #E8800C;
+}
+
+#comfort {
+  background-color: #D40412;
+}
+
