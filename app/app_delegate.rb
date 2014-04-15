@@ -8,7 +8,7 @@ class AppDelegate < PM::Delegate
     # notification.applicationIconBadgeNumber = 1
     # application.scheduleLocalNotification(notification)
 
-    if App::Persistence['email'].nil?
+    if !App::Persistence['email'].nil?
       showWelcomeController
     else
       open ZoneController.new
