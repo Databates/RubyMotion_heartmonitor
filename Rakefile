@@ -11,7 +11,8 @@ end
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'AuthExample'
+  app.name = 'Equanimity'
+  app.icons = ["Icon.png", "Icon@2x.png"]
   app.identifier = 'com.herokuapp.equanimity'
   app.device_family = :iphone
   app.interface_orientations = [:portrait]
