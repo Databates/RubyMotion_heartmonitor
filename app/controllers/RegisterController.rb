@@ -71,7 +71,7 @@ class RegisterController < PM::FormotionScreen #Formotion::FormController #PM:Fo
       # else
         SVProgressHUD.showWithStatus("Registering new account...", maskType:SVProgressHUDMaskTypeGradient)
         App::Persistence['email'] = form.render[:email]
-        App.alert("You did it!")
+        # App.alert("You did it!")
         puts App::Persistence['email']
         # self.navigationController.dismissModalViewControllerAnimated(true)
         open ZoneController.new(nav_bar: true)

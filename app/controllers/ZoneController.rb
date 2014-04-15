@@ -71,7 +71,7 @@ class ZoneController < PM::Screen
     # self.navigationItem.rightBarButtonItem = right_button
 
     #panic button
-    @panicButton = UIButton.alloc.initWithFrame(CGRectMake(20, 80, 280, 50))
+    @panicButton = UIButton.alloc.initWithFrame(CGRectMake(20, 70, 280, 50))
     @panicButton.setTitle("Panic Zone", forState:UIControlStateNormal)
     # @panicButton.backgroundColor = UIColor.redColor
     @panicButton.addTarget(self, action:"panic_tapped", forControlEvents:UIControlEventTouchUpInside)
@@ -79,7 +79,7 @@ class ZoneController < PM::Screen
     self.view.addSubview(@panicButton)
 
     #panic_edge button
-    @panicEdgeButton = UIButton.alloc.initWithFrame(CGRectMake(20, 180, 280, 50))
+    @panicEdgeButton = UIButton.alloc.initWithFrame(CGRectMake(20, 170, 280, 50))
     @panicEdgeButton.setTitle("Panic Edge Zone", forState:UIControlStateNormal)
     # @panicEdgeButton.backgroundColor = UIColor.orangeColor
     @panicEdgeButton.addTarget(self, action:"panic_edge_tapped", forControlEvents:UIControlEventTouchUpInside)
@@ -87,7 +87,7 @@ class ZoneController < PM::Screen
     self.view.addSubview(@panicEdgeButton)
 
     #learning button
-    @learningButton = UIButton.alloc.initWithFrame(CGRectMake(20, 280, 280, 50))
+    @learningButton = UIButton.alloc.initWithFrame(CGRectMake(20, 270, 280, 50))
     @learningButton.setTitle("Learning Zone", forState:UIControlStateNormal)
     # @learningButton.backgroundColor = UIColor.greenColor
     @learningButton.addTarget(self, action:"learning_tapped", forControlEvents:UIControlEventTouchUpInside)
@@ -95,7 +95,7 @@ class ZoneController < PM::Screen
     self.view.addSubview(@learningButton)
 
     #comfort edge button
-    @comfortEdgeButton = UIButton.alloc.initWithFrame(CGRectMake(20, 380, 280, 50))
+    @comfortEdgeButton = UIButton.alloc.initWithFrame(CGRectMake(20, 370, 280, 50))
     @comfortEdgeButton.setTitle("Comfort Edge", forState:UIControlStateNormal)
     # @comfortEdgeButton.backgroundColor = UIColor.orangeColor
     @comfortEdgeButton.addTarget(self, action:"comfort_edge_tapped", forControlEvents:UIControlEventTouchUpInside)
@@ -103,7 +103,7 @@ class ZoneController < PM::Screen
     self.view.addSubview(@comfortEdgeButton)
 
     #comfort button
-    @comfortButton = UIButton.alloc.initWithFrame(CGRectMake(20, 480, 280, 50))
+    @comfortButton = UIButton.alloc.initWithFrame(CGRectMake(20, 470, 280, 50))
     @comfortButton.setTitle("Comfort", forState:UIControlStateNormal)
     # @comfortButton.backgroundColor = UIColor.redColor
     @comfortButton.addTarget(self, action:"comfort_tapped", forControlEvents:UIControlEventTouchUpInside)
@@ -123,7 +123,7 @@ end
     BubbleWrap::HTTP.post("http://equanimity.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
 
       puts data
-      # puts "response = #{response}"
+      puts "response = #{response}"
       # puts "response.body = #{response.body.to_str rescue ''}"
       # puts "response.error_message = #{response.error_message}"
       # puts "response.status_code = #{response.status_code.to_s rescue ''}"
@@ -131,9 +131,9 @@ end
 
       if response.ok?
 
-        App.alert("response was ok!")
+        App.alert("Thanks!")
       else
-         App.alert("Fail")
+         App.alert("Something went wrong...")
       end
     end
   end
@@ -143,9 +143,9 @@ end
     data = {answer: 2, email: App::Persistence['email']}
     BubbleWrap::HTTP.post("http://equanimity.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
       if response.ok?
-        App.alert("response was ok!")
+        App.alert("Thanks!")
       else
-         App.alert("Fail")
+         App.alert("Something went wrong...")
       end
     end
   end
@@ -154,9 +154,9 @@ end
     data = {answer: 3, email: App::Persistence['email']}
     BubbleWrap::HTTP.post("http://equanimity.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
       if response.ok?
-        App.alert("response was ok!")
+        App.alert("Thanks!")
       else
-         App.alert("Fail")
+         App.alert("Something went wrong...")
       end
     end
   end
@@ -167,9 +167,9 @@ end
     data = {answer: 4, email: App::Persistence['email']}
     BubbleWrap::HTTP.post("http://equanimity.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
       if response.ok?
-        App.alert("response was ok!")
+        App.alert("Thanks!")
       else
-         App.alert("Fail")
+         App.alert("Something went wrong...")
       end
     end
   end
@@ -180,9 +180,9 @@ end
     data = {answer: 5, email: App::Persistence['email']}
     BubbleWrap::HTTP.post("http://equanimity.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
       if response.ok?
-        App.alert("response was ok!")
+        App.alert("Thanks!")
       else
-         App.alert("Fail")
+         App.alert("Something went wrong...")
       end
     end
   end
