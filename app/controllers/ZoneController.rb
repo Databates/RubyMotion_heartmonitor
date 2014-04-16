@@ -5,12 +5,17 @@ class ZoneController < PM::Screen
   self.title "Equanimity"
 
   def on_load
-      set_nav_bar_button :left, title: "", action: :open_data_screen
-      set_nav_bar_button :right, title: "", action: :right_data_screen
+      # set_nav_bar_button :left, title: "Results", action: :open_data_screen
+      # set_nav_bar_button :left, title: "Sign In", action: :register_controller
+      # set_nav_bar_button :right, title: "", action: :right_data_screen
 
       # set_nav_bar_button :left, title: "Results", action: :open_data_screen
 
       # set_nav_bar_button :right, title: "About Us", action: :open_aboutus_screen
+  end
+
+  def register_controller
+    open RegisterController.new
   end
 
   def open_data_screen

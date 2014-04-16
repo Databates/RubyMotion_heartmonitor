@@ -2,7 +2,7 @@ class AppDelegate < PM::Delegate
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
 
-    if !App::Persistence['email'].nil?
+    if App::Persistence['email'].nil?
       # showWelcomeController
       open WelcomeController.new(nav_bar: true)
     else
