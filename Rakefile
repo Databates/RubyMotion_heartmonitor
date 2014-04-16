@@ -20,7 +20,7 @@ Motion::Project::App.setup do |app|
 
   app.pods do
     pod 'SVProgressHUD'
-    pod 'PixateFreestyle'
+    # pod 'PixateFreestyle'
   end
 
 end
