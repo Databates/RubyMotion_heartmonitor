@@ -8,12 +8,13 @@ class WelcomeController < PM::Screen #UIViewController
     super
 
     self.title = "EQUANIMITY"
-    self.view.backgroundColor = UIColor.whiteColor
+    # self.view.backgroundColor = UIColor.whiteColor
 
     @containerView = UIView.alloc.initWithFrame([[80, 250], [self.view.frame.size.width, 100]])
 
     @welcomeTitleLabel = UILabel.alloc.initWithFrame([[10, 10], [self.view.frame.size.width - 20, 20]])
     @welcomeTitleLabel.font = UIFont.boldSystemFontOfSize(20)
+    @welcomeTitleLabel.color = UIColor.whiteColor
     @welcomeTitleLabel.text = "Welcome, Boot."
 
     @containerView.addSubview(@welcomeTitleLabel)
@@ -43,7 +44,8 @@ class WelcomeController < PM::Screen #UIViewController
 
     # Finally add the scrollview to the main view
     self.view.addSubview(@containerView)
-    view.styleId = 'myView'
+
+    view.styleId = 'welcome-view'
   end
 
   def register

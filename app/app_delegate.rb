@@ -1,22 +1,17 @@
 class AppDelegate < PM::Delegate
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
-    # notification = UILocalNotification.alloc.init
-    # notification.fireDate = NSDate.dateWithTimeIntervalSinceNow(10)
-    # notification.alertBody = "My first notification"
-    # notification.alertAction = "Yo."
-    # notification.applicationIconBadgeNumber = 1
-    # application.scheduleLocalNotification(notification)
 
-    if App::Persistence['email'].nil?
-      showWelcomeController
+    if !App::Persistence['email'].nil?
+      # showWelcomeController
+      open WelcomeController.new(nav_bar: true)
     else
 
-    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    @zone_controller = ZoneController.alloc.initWithNibName(nil, bundle:nil)
-    @window.rootViewController = UINavigationController.alloc.initWithRootViewController(@zone_controller)
-    @window.makeKeyAndVisible
-      # open ZoneController.new
+    # @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+    # @zone_controller = ZoneController.alloc.initWithNibName(nil, bundle:nil)
+    # @window.rootViewController = UINavigationController.alloc.initWithRootViewController(@zone_controller)
+    # @window.makeKeyAndVisible
+      open ZoneController.new(nav_bar: true)
     end
     true
   end
@@ -37,21 +32,22 @@ class AppDelegate < PM::Delegate
     )
   end
 
-  def showWelcomeController
-    @welcomeController = WelcomeController.alloc.init
-    @welcomeNavigationController = UINavigationController.alloc.init
-    @welcomeNavigationController.pushViewController(@welcomeController, animated:false)
+  # def showWelcomeController
 
-    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+  #   # @welcomeController = WelcomeController.alloc.init
+  #   # @welcomeNavigationController = UINavigationController.alloc.init
+  #   # @welcomeNavigationController.pushViewController(@welcomeController, animated:false)
 
-    @navigationController = UINavigationController.alloc.init
-    @navigationController.pushViewController(TasksListController.controller,
-                                             animated:false)
+  #   # @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
-    @window.rootViewController = @navigationController
-    @window.makeKeyAndVisible
+  #   # @navigationController = UINavigationController.alloc.init
+  #   # @navigationController.pushViewController(TasksListController.controller,
+  #   #                                          animated:false)
 
-    TasksListController.controller.presentModalViewController(@welcomeNavigationController,
-                                                              animated:true)
-  end
+  #   # @window.rootViewController = @navigationController
+  #   # @window.makeKeyAndVisible
+
+  #   TasksListController.controller.presentModalViewController(@welcomeNavigationController,
+  #                                                             animated:true)
+  # end
 end

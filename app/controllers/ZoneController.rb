@@ -1,13 +1,27 @@
 class ZoneController < PM::Screen
 
-  title "Equanimity"
 
-  # def on_load
-  #     set_nav_bar_button :left, title: "D3 View", action: :open_help_screen
-  #     # Add an add button on the top right navbar
-  #     # set_nav_bar_button :right, title: "Responses", action: :zaggstar_feed
-  #     set_nav_bar_button :right, title: "Tag Me", action: :add_zaggle_form
-  # end
+
+  self.title "Equanimity"
+
+  def on_load
+      set_nav_bar_button :left, title: "", action: :open_data_screen
+      set_nav_bar_button :right, title: "", action: :right_data_screen
+
+      # set_nav_bar_button :left, title: "Results", action: :open_data_screen
+
+      # set_nav_bar_button :right, title: "About Us", action: :open_aboutus_screen
+  end
+
+  def open_data_screen
+    # open OpenDataScreen.new(nav_bar: true)
+  end
+
+  def right_data_screen
+  end
+
+  def open_aboutus_screen
+  end
 
   #open modal with
   def will_appear
@@ -114,6 +128,7 @@ class ZoneController < PM::Screen
     @comfortButton.styleId = "comfort"
     self.view.addSubview(@comfortButton)
 
+    view.styleId = 'basics-view'
 
 end
   # def push

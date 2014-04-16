@@ -2,9 +2,16 @@
 class RegisterController < PM::FormotionScreen #Formotion::FormController #PM:FormotionScreen
 
 
-  # def on_load
-  #     set_nav_bar_button :left, title: "Cancel", action: :close_screen
-  # end
+  def on_load
+      set_nav_bar_button :left, title: "", action: :close_screen
+      set_nav_bar_button :right, title: "", action: :close_screen
+  end
+
+  def close_screen
+  end
+
+  def right_empty_method
+  end
 
   def init
     form = Formotion::Form.new({
@@ -57,7 +64,8 @@ class RegisterController < PM::FormotionScreen #Formotion::FormController #PM:Fo
     super
 
     self.title = "Sign In"
-    view.styleId = 'myView'
+
+    view.styleId = 'register-view'
   end
 
   def register
