@@ -1,33 +1,33 @@
-class TasksListController < PM::Screen #UIViewController
+# class TasksListController < PM::Screen #UIViewController
 
-  def self.controller
-    @controller ||= TasksListController.alloc.initWithNibName(nil, bundle:nil)
-  end
+#   def self.controller
+#     @controller ||= TasksListController.alloc.initWithNibName(nil, bundle:nil)
+#   end
 
-  def viewDidLoad
-    super
+#   def viewDidLoad
+#     super
 
-    self.title = "Tasks"
-    self.view.backgroundColor = UIColor.whiteColor
+#     self.title = "Tasks"
+#     self.view.backgroundColor = UIColor.whiteColor
 
-    logoutButton = UIBarButtonItem.alloc.initWithTitle("Logout",
-                                                       style:UIBarButtonItemStylePlain,
-                                                       target:self,
-                                                       action:'logout')
-    self.navigationItem.leftBarButtonItem = logoutButton
+#     logoutButton = UIBarButtonItem.alloc.initWithTitle("Logout",
+#                                                        style:UIBarButtonItemStylePlain,
+#                                                        target:self,
+#                                                        action:'logout')
+#     self.navigationItem.leftBarButtonItem = logoutButton
 
-    refreshButton = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemRefresh,
-                                                                      target:self,
-                                                                      action:'refresh')
-    self.navigationItem.rightBarButtonItem = refreshButton
+#     refreshButton = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemRefresh,
+#                                                                       target:self,
+#                                                                       action:'refresh')
+#     self.navigationItem.rightBarButtonItem = refreshButton
 
-    view.styleId = 'myView'
-  end
+#     view.styleId = 'myView'
+#   end
 
-  def refresh
-  end
+#   def refresh
+#   end
 
-  def logout
-    UIApplication.sharedApplication.delegate.logout
-  end
-end
+#   def logout
+#     UIApplication.sharedApplication.delegate.logout
+#   end
+# end
