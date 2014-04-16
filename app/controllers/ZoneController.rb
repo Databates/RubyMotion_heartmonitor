@@ -70,6 +70,10 @@ class ZoneController < PM::Screen
     # right_button = UIBarButtonItem.alloc.initWithTitle("About Us", style: UIBarButtonItemStyleBordered, target:self, action:'push')
     # self.navigationItem.rightBarButtonItem = right_button
 
+
+    # scrollView = UIScrollView.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+    # scrollView.scrollEnabled = true
+
     #panic button
     @panicButton = UIButton.alloc.initWithFrame(CGRectMake(20, 70, 280, 50))
     @panicButton.setTitle("Panic Zone", forState:UIControlStateNormal)
@@ -79,7 +83,7 @@ class ZoneController < PM::Screen
     self.view.addSubview(@panicButton)
 
     #panic_edge button
-    @panicEdgeButton = UIButton.alloc.initWithFrame(CGRectMake(20, 170, 280, 50))
+    @panicEdgeButton = UIButton.alloc.initWithFrame(CGRectMake(20, 145, 280, 50))
     @panicEdgeButton.setTitle("Panic Edge Zone", forState:UIControlStateNormal)
     # @panicEdgeButton.backgroundColor = UIColor.orangeColor
     @panicEdgeButton.addTarget(self, action:"panic_edge_tapped", forControlEvents:UIControlEventTouchUpInside)
@@ -87,7 +91,7 @@ class ZoneController < PM::Screen
     self.view.addSubview(@panicEdgeButton)
 
     #learning button
-    @learningButton = UIButton.alloc.initWithFrame(CGRectMake(20, 270, 280, 50))
+    @learningButton = UIButton.alloc.initWithFrame(CGRectMake(20, 220, 280, 50))
     @learningButton.setTitle("Learning Zone", forState:UIControlStateNormal)
     # @learningButton.backgroundColor = UIColor.greenColor
     @learningButton.addTarget(self, action:"learning_tapped", forControlEvents:UIControlEventTouchUpInside)
@@ -95,7 +99,7 @@ class ZoneController < PM::Screen
     self.view.addSubview(@learningButton)
 
     #comfort edge button
-    @comfortEdgeButton = UIButton.alloc.initWithFrame(CGRectMake(20, 370, 280, 50))
+    @comfortEdgeButton = UIButton.alloc.initWithFrame(CGRectMake(20, 295, 280, 50))
     @comfortEdgeButton.setTitle("Comfort Edge", forState:UIControlStateNormal)
     # @comfortEdgeButton.backgroundColor = UIColor.orangeColor
     @comfortEdgeButton.addTarget(self, action:"comfort_edge_tapped", forControlEvents:UIControlEventTouchUpInside)
@@ -103,12 +107,13 @@ class ZoneController < PM::Screen
     self.view.addSubview(@comfortEdgeButton)
 
     #comfort button
-    @comfortButton = UIButton.alloc.initWithFrame(CGRectMake(20, 470, 280, 50))
+    @comfortButton = UIButton.alloc.initWithFrame(CGRectMake(20, 370, 280, 50))
     @comfortButton.setTitle("Comfort", forState:UIControlStateNormal)
     # @comfortButton.backgroundColor = UIColor.redColor
     @comfortButton.addTarget(self, action:"comfort_tapped", forControlEvents:UIControlEventTouchUpInside)
     @comfortButton.styleId = "comfort"
     self.view.addSubview(@comfortButton)
+
 
 end
   # def push

@@ -8,11 +8,15 @@ class AppDelegate < PM::Delegate
     # notification.applicationIconBadgeNumber = 1
     # application.scheduleLocalNotification(notification)
 
-    if !App::Persistence['email'].nil?
+    if App::Persistence['email'].nil?
       showWelcomeController
     else
-      open ZoneController.new
 
+    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+    @zone_controller = ZoneController.alloc.initWithNibName(nil, bundle:nil)
+    @window.rootViewController = UINavigationController.alloc.initWithRootViewController(@zone_controller)
+    @window.makeKeyAndVisible
+      # open ZoneController.new
     end
     true
   end
@@ -22,7 +26,6 @@ class AppDelegate < PM::Delegate
   end
 
   def applicationDidEnterBackground(application)
-
     Takeoff::Reminders.schedule(
       body: "Please check in with Equanimity.",
       fire_date: 1800 #seconds
