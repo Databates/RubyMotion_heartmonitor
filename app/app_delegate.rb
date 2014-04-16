@@ -22,11 +22,6 @@ class AppDelegate < PM::Delegate
   end
 
   def applicationDidEnterBackground(application)
-      Takeoff::Reminders.schedule(
-      body: "Testing Reminder.",
-      fire_date: 5 #seconds
-    )
-
 
     Takeoff::Reminders.schedule(
       body: "Please check in with Equanimity.",
