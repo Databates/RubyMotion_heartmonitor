@@ -95,7 +95,7 @@ class ZoneController < PM::Screen
 
     #panic button
     @panicButton = UIButton.alloc.initWithFrame(CGRectMake(20, 40, 280, 50))
-    @panicButton.setTitle("Panic Zone", forState:UIControlStateNormal)
+    @panicButton.setTitle("Panic", forState:UIControlStateNormal)
     # @panicButton.backgroundColor = UIColor.redColor
     @panicButton.addTarget(self, action:"panic_tapped", forControlEvents:UIControlEventTouchUpInside)
     @panicButton.styleId = "panic"
@@ -103,7 +103,7 @@ class ZoneController < PM::Screen
 
     #panic_edge button
     @panicEdgeButton = UIButton.alloc.initWithFrame(CGRectMake(20, 115, 280, 50))
-    @panicEdgeButton.setTitle("Panic Edge Zone", forState:UIControlStateNormal)
+    @panicEdgeButton.setTitle("Panic Edge", forState:UIControlStateNormal)
     # @panicEdgeButton.backgroundColor = UIColor.orangeColor
     @panicEdgeButton.addTarget(self, action:"panic_edge_tapped", forControlEvents:UIControlEventTouchUpInside)
     @panicEdgeButton.styleId = "panic_edge"
@@ -111,7 +111,7 @@ class ZoneController < PM::Screen
 
     #learning button
     @learningButton = UIButton.alloc.initWithFrame(CGRectMake(20, 190, 280, 50))
-    @learningButton.setTitle("Learning Zone", forState:UIControlStateNormal)
+    @learningButton.setTitle("Learning", forState:UIControlStateNormal)
     # @learningButton.backgroundColor = UIColor.greenColor
     @learningButton.addTarget(self, action:"learning_tapped", forControlEvents:UIControlEventTouchUpInside)
     @learningButton.styleId = "learning"
