@@ -1,12 +1,10 @@
 class ZoneController < PM::Screen
 
-
-
   self.title "Equanimity"
 
   def on_load
-    # set_nav_bar_button :left, title: "Sign In", action: :open_signin
-    # set_nav_bar_button :right, title: "", action: :close_screen
+    set_nav_bar_button :left, title: "Results", action: :open_data_screen
+    set_nav_bar_button :right, title: "About Us", action: :about_us_screen
   end
 
 
@@ -19,29 +17,25 @@ class ZoneController < PM::Screen
       # set_nav_bar_button :right, title: "About Us", action: :open_aboutus_screen
 
 
-
-  def open_signin
-    # open RegisterController
-  end
-
   def open_data_screen
-    # open OpenDataScreen.new(nav_bar: true)
+    open OpenDataScreen.new(nav_bar: true)
+    # open HelpScreen.new(nav_bar: true)
   end
 
-  def right_data_screen
+  def about_us_screen
+    open AboutUs.new(nav_bar: true)
   end
 
-  def open_aboutus_screen
-  end
+
 
   #open modal with
-  def will_appear
-    # update_table_data
+  # def will_appear
+  #   # update_table_data
 
-    set_attributes self.view, {
-      background_color: hex_color("#FFFFFF")
-    }
-  end
+  #   # set_attributes self.view, {
+  #   #   background_color: hex_color("#FFFFFF")
+  #   # }
+  # end
 
   # ProMotion::Logger: [ERROR] Missing table_data method in TableScreen ZoneController.
 

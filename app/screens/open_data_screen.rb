@@ -2,13 +2,12 @@ class OpenDataScreen < PM::WebScreen
   title ""
 
 #when present things modally. Think about how close it
-  # def on_load
-  #   # set_nav_bar_button :right, title: "Back", action: :close_help_screen
-  # end
+  def on_load
+    set_nav_bar_button :left, title: "Back", action: :close_help_screen
+  end
 
   def content
     NSURL.URLWithString('http://equanimity.herokuapp.com')
-
   end
 
 #let webscreen know what it should do when the load fails

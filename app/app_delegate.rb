@@ -1,20 +1,34 @@
 class AppDelegate < PM::Delegate
 
-  def application(application, didFinishLaunchingWithOptions:launchOptions)
 
-    if App::Persistence['email'].nil?
-      # showWelcomeController
+
+
+  def on_load(app, options) 
+     if App::Persistence['email'].nil?
       open WelcomeController.new(nav_bar: true)
     else
-
-    # @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    # @zone_controller = ZoneController.alloc.initWithNibName(nil, bundle:nil)
-    # @window.rootViewController = UINavigationController.alloc.initWithRootViewController(@zone_controller)
-    # @window.makeKeyAndVisible
       open ZoneController.new(nav_bar: true)
     end
-    true
+  
   end
+
+
+
+  # def application(application, didFinishLaunchingWithOptions:launchOptions)
+
+  #   if !App::Persistence['email'].nil?
+  #     # showWelcomeController
+  #     open WelcomeController.new(nav_bar: true)
+  #   else
+
+  #   # @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+  #   # @zone_controller = ZoneController.alloc.initWithNibName(nil, bundle:nil)
+  #   # @window.rootViewController = UINavigationController.alloc.initWithRootViewController(@zone_controller)
+  #   # @window.makeKeyAndVisible
+  #     open ZoneController.new(nav_bar: true)
+  #   end
+  #   true
+  # end
 
   def applicationDidBecomeActive(application)
     Takeoff::Reminders.reset
