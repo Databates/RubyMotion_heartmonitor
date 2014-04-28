@@ -3,7 +3,7 @@
 
 Here are the screenshots of this app: 
 
-![](http://i.imgur.com/dkqEp8L.png)
+![](http://i.imgur.com/93QP7di.png)
 
 ![](http://i.imgur.com/Vp8dQ9F.png)
 
