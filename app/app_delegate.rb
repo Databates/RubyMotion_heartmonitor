@@ -1,10 +1,8 @@
 class AppDelegate < PM::Delegate
 
 
-
-
   def on_load(app, options) 
-     if App::Persistence['email'].nil?
+     if !App::Persistence['email'].nil?
       open WelcomeController.new(nav_bar: true)
     else
       open ZoneController.new(nav_bar: true)
